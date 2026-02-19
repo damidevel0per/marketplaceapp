@@ -3,7 +3,6 @@ import React from "react";
 import {View, Text} from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
 
-
 export default function StoresScreen() {
 
   //recibimos parametro, para ir a categoria

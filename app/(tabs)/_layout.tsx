@@ -1,18 +1,18 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTheme } from 'react-native-paper';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const theme = useTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: theme.colors.onSurface,
+        tabBarInactiveTintColor: theme.colors.outline,
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
@@ -20,23 +20,44 @@ export default function TabLayout() {
         name="(home)"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name={focused ? 'home' : 'home-outline'}
+              size={28}
+              color={focused ? theme.colors.onBackground : theme.colors.outline}
+            />
+          ),
         }}
       />
+
       <Tabs.Screen
         name="(explore)"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name={focused ? 'map-marker' : 'map-marker-outline'}
+              size={28}
+              color={focused ? theme.colors.onBackground : theme.colors.outline}
+            />
+          ),
         }}
       />
+
       <Tabs.Screen
         name="account"
         options={{
           title: 'Account',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name={focused ? 'account' : 'account-outline'}
+              size={28}
+              color={focused ? theme.colors.onBackground : theme.colors.outline}
+            />
+          ),
         }}
       />
+
     </Tabs>
   );
 }
