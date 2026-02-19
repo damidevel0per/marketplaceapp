@@ -1,15 +1,14 @@
-
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { PaperProvider, MD3LightTheme as DefaultTheme,} from 'react-native-paper';
+import { PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper';
+import { useFonts } from 'expo-font';
+import { View } from 'react-native';
 
 export const unstable_settings = {
   anchor: '(tabs)',
 };
 
-//paleta de colores de la app
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -21,8 +20,19 @@ const theme = {
   },
 };
 
+export type Colores = typeof theme.colors;
 
 export default function RootLayout() {
+  const [loaded] = useFonts({
+    OpenSans: require('../assets/fonts/OpenSans-Regular.ttf'),
+    OpenSansMedium: require('../assets/fonts/OpenSans-Medium.ttf'),
+    OpenSansBold: require('../assets/fonts/OpenSans-Bold.ttf'),
+  });
+
+  // Evitar render hasta que cargue la fuente
+  if (!loaded) {
+    return null; // o un Splash / Loader
+  }
 
   return (
     <PaperProvider theme={theme}>
