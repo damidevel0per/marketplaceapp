@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 36,
-    lineHeight: 36,
     fontFamily: ComponenteTextoFontFamily.OPEN_SAMS_BOLD,
+    backgroundColor: 'blue'
   },
   subtitle: {
     fontSize: 20,
