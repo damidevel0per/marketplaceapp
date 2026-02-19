@@ -19,7 +19,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="(home)"
         options={{
-          title: 'Home',
+          title: 'Inicio',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
               name={focused ? 'home' : 'home-outline'}
@@ -33,7 +33,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="(explore)"
         options={{
-          title: 'Explore',
+          title: 'Explorar',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
               name={focused ? 'map-marker' : 'map-marker-outline'}
@@ -47,7 +47,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="account"
         options={{
-          title: 'Account',
+          title: 'Cuenta',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
               name={focused ? 'account' : 'account-outline'}

@@ -1,12 +1,13 @@
 import React from "react";
-import {View, Text} from "react-native";
 import {Link} from "expo-router"; 
+import ComponenteSafeAreaView from "@/components/ComponenteSafeAreaView";
+import ComponenteHeader from "@/components/ComponenteHeader";
 
 export default function AccountScreen() {
   return (
-    <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-      <Text>Account</Text>
+    <ComponenteSafeAreaView>
+      <ComponenteHeader title="Cuenta"/>
       <Link href={'/(tabs)/account/edit-account'}>Edit account</Link>
-    </View>
+    </ComponenteSafeAreaView>
   );
 }
