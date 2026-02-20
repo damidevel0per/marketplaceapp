@@ -17,6 +17,7 @@ const theme = {
     onBackground: '#010101',
     onSurface: '#010101',
     outline: '#5E5E5E',
+    background: '#FFFFFF',
   },
 };
 

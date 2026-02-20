@@ -4,6 +4,7 @@ import {
     SafeAreaView,
     SafeAreaViewProps
 } from "react-native-safe-area-context";
+import { useTheme } from "react-native-paper";
 
 interface ComponenteSafeAreaViewProps extends SafeAreaViewProps { }
 
@@ -17,7 +18,8 @@ interface ComponenteSafeAreaViewProps extends SafeAreaViewProps { }
  * @returns {JSX.Element} A `SafeAreaView` component containing the provided children.
  */
 export default function ComponenteSafeAreaView({ children }: ComponenteSafeAreaViewProps) {
-    return <SafeAreaView style= {styles.container}>{children}</SafeAreaView>
+    const {colors} = useTheme();
+    return <SafeAreaView style= {[styles.container, {backgroundColor: colors.background}]}>{children}</SafeAreaView>
 }
 
 const styles = StyleSheet.create({

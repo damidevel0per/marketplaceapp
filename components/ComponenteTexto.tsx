@@ -4,7 +4,7 @@ import { useThemeColor } from '@/hooks/use-theme-color';
 import { Colores } from '@/app/_layout';
 import { useTheme } from 'react-native-paper';
 
-enum ComponenteTextoFontFamily {
+export enum ComponenteTextoFontFamily {
   OPEN_SANS = "Open Sans",
   OPENS_SANS_MEDIUM = "OpenSansMedium",
   OPEN_SAMS_BOLD = "OpenSansBold",
